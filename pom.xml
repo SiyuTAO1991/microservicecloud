@@ -37,7 +37,7 @@
 			<dependency>
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
-				<version>5.0.4</version>
+				<version>8.0.11</version>
 			</dependency>
 			<dependency>
 				<groupId>com.alibaba</groupId>
@@ -67,7 +67,35 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<build>
+		<finalName>microservicecloud</finalName><!-- 对该project下的所有为服务module都适用 -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory><!-- 允许访问该路径下的文件信息（此路径放的都是配置文件） -->
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<delimiters>
+						<delimit>$</delimit><!-- 自动解析配置文件（yml文件）中以$开头和结尾的信息作为info信息 -->
+					</delimiters>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
 	<modules>
 		<module>microservicecloud-api</module>
+		<module>microservicecloud-provider-dept-8001</module>
+		<module>micorservicecloud-consumer-dept-80</module>
+		<module>microservicecloud-eureka-7001</module>
+		<module>microservicecloud-eureka-7002</module>
+		<module>microservicecloud-eureka-7003</module>
 	</modules>
 </project>
