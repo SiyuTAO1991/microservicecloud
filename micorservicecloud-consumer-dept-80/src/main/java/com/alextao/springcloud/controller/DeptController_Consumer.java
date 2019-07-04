@@ -12,9 +12,11 @@ import com.alextao.springcloud.entities.Dept;
 
 @RestController
 public class DeptController_Consumer {
-
-	private static final String REST_URL_PREFIX = "http://localhost:8001";
-
+	//直接连接server端
+	//private static final String REST_URL_PREFIX = "http://localhost:8001";
+	//ribbon已经和ribbon整合，可以直接调用eureka中的MICROSERVICECLOUD-DEPT微服务，不需要知道地址和端口号
+	private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
+	
 	@Autowired
 	private RestTemplate restTemplate;
 
