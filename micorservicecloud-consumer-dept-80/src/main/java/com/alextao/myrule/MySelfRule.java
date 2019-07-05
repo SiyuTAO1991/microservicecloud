@@ -12,6 +12,7 @@ public class MySelfRule {
 
 	@Bean 
 	public IRule myRule() {
-		return new RandomRule();//使用随机算法替换掉默认的轮询算法
+		//return new RandomRule();//使用随机算法替换掉默认的轮询算法
+		return new RandomRule_ZY();//我自定义为每个机器被访问5次
 	}
 }
