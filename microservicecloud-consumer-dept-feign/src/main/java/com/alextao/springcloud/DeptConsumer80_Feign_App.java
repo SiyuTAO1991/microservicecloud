@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableEurekaClient
-@RibbonClient(name="MICROSERVICECLOUD-DEPT")
 @EnableFeignClients(basePackages= {"com.alextao.springcloud"})
 @ComponentScan("com.alextao.springcloud")
 public class DeptConsumer80_Feign_App {
