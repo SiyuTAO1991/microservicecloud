@@ -8,7 +8,6 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>microservicecloud-provider-dept-hystrix-8001</artifactId>
-
 	<dependencies>
 		<dependency><!-- 引入自己定义的api通用包，可以使用Dept部门Entity -->
 			<groupId>com.alextao.springcloud</groupId>
@@ -69,11 +68,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+		  <!-- actuator监控信息完善 -->
+		<dependency>
+		  	<groupId>org.springframework.boot</groupId>
+		  	<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<!-- hystrix -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
-
 	</dependencies>
 </project>
